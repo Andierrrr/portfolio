@@ -6,7 +6,7 @@ const Skills = () => {
         <section id='skills'>
             <span className="skillTitle">About Me</span>
             <span className="skillDesc">
-                 
+                  
             
             </span>
             <div className="skillBars">
@@ -19,7 +19,7 @@ const Skills = () => {
                         </p>
                         <p>
                             <strong>MS In Computer Information Systems</strong><br />
-                            Kean University, May, 2024 - Present
+                            Kean University May, 2024 - Present
                         </p>
                     </div>
                 </div>
