@@ -1,0 +1,194 @@
+@keyframes glowingBorder {
+    0% {
+        box-shadow: 0 0 5px teal, 0 0 10px teal, 0 0 15px teal, 0 0 20px teal;
+    }
+    50% {
+        box-shadow: 0 0 20px teal, 0 0 25px teal, 0 0 30px teal, 0 0 35px teal;
+    }
+    100% {
+        box-shadow: 0 0 5px teal, 0 0 10px teal, 0 0 15px teal, 0 0 20px teal;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(2, 24, 34); /* Dark teal background */
+    position: relative; /* Ensure positioning context for rain effect */
+}
+
+#contactPage {
+    min-height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono font */
+    background-color: rgb(2, 24, 34);
+}
+
+.contactPageTitle {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono font */
+    color: white; /* White color for the title */
+}
+
+.clientDesc {
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono font */
+    color: white; /* White color for description text */
+}
+
+.clientImgs {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Space between images */
+}
+
+.clientImg {
+    width: 8rem; /* Adjust size as needed */
+    height: 8rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Light background to handle transparency issues */
+    border-radius: 50%; /* Makes the border circular */
+    padding: 0.5rem;
+    border: 5px solid transparent; /* Border width */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow to enhance visibility */
+    opacity: 0; /* Initial opacity for the fade-in effect */
+    animation: fadeIn 2s forwards, bounce 4s infinite; /* Fade-in and bouncing animations */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+    overflow: hidden; /* Ensure the image does not overflow the border */
+}
+
+.clientImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    border-radius: 50%; /* Ensures the image matches the border's circular shape */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the original position */
+    }
+    50% {
+        transform: translateY(-20px); /* Move up */
+    }
+}
+
+.clientImg:nth-child(odd) {
+    animation-delay: 0s; /* No delay for odd elements */
+}
+
+.clientImg:nth-child(even) {
+    animation-delay: 2s; /* 2-second delay for even elements */
+}
+
+.clientImg:hover {
+    transform: scale(1.1); /* Expands the image on hover */
+    border-color: teal; /* Border color on hover */
+}
+
+#contact {
+    margin-top: 2rem;
+}
+
+.contactDesc {
+    font-size: medium;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono font */
+    color: white; /* White color for description text */
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    max-width: 60rem;
+    margin-bottom: 2rem;
+}
+
+.name, .email, .msg {
+    font-size: medium;
+    width: 100%;
+    max-width: 40rem;
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    border: 1px solid transparent; /* Make border transparent */
+    border-radius: 0.5rem;
+    background: rgb(2, 24, 34); /* Dark background for form fields */
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono font */
+    /* Added subtle depth effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Depth effect */
+}
+
+.submitBtn {
+    background: teal; /* Button color matching the theme */
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 3.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 1rem 0;
+    color: white; /* White text on the button */
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono font */
+}
+
+.submitBtn:hover {
+    background: lightcyan; /* Lighter teal color on hover */
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.link {
+    width: 4rem; /* Adjust size as needed */
+    height: 4rem;
+    border-radius: 50%; /* Circular border */
+    background-color: rgba(255, 255, 255, 0.1); /* Background color to handle transparency */
+    padding: 0.5rem;
+    border: 5px solid transparent; /* Border width */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+    opacity: 0; /* Initial opacity for the fade-in effect */
+    animation: fadeIn 2s forwards; /* Fade-in animation */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+    overflow: hidden; /* Ensure the image does not overflow the border */
+}
+
+.link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image covers the entire area without distortion */
+    border-radius: 10%; /* Ensures the image matches the border's circular shape */
+}
+
+.link:hover {
+    transform: scale(1.1); /* Expands the image on hover */
+    border-color: teal; /* Border color on hover */
+}

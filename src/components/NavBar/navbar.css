@@ -1,0 +1,99 @@
+/* Colors harmonious with the intro page background */
+.navbar {
+    background: rgb(2, 24, 34); /* Dark gray/black to match the intro's overall dark theme */
+    height: 5rem;
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.logo {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+    color: teal; /* Teal color to match the theme */
+}
+
+.desktopMenuListItem {
+    margin: 1rem;
+    cursor: pointer;
+    color: teal; /* Teal color for consistency with black theme */
+}
+
+.desktopMenuListItem:hover {
+    color: lightcyan; /* Lighter teal for hover effect */
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid lightcyan; /* Border color matching hover */
+}
+
+.desktopMenuBtn {
+    background: teal; /* Button color matching the teal theme */
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    border-radius: 2rem;
+}
+
+.desktopMenuImg {
+    object-fit: cover;
+    height: 1rem;
+    width: 1rem;
+    margin: 1rem;
+}
+
+.active {
+    color: lightcyan; /* Active color matching hover effect */
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid lightcyan; /* Active border color matching hover */
+}
+
+.mobMenu {
+    display: none;
+    object-fit: cover;
+    height: 1.8rem;
+    filter: invert(100%); /* Inverts the icon color to match the light theme */
+}
+
+.navMenu {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: fit-content;
+    min-width: 15rem;
+    background: rgb(15, 15, 15); /* Dark background to match the navbar */
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.listItem {
+    color: teal; /* Complementary color to the active and hover colors */
+    padding: 0.5rem 3rem;
+    margin: 0.25rem;
+    background: rgb(2, 24, 34); /* Slightly lighter dark background for contrast */
+}
+
+@media screen and (max-width: 720px) {
+    .mobMenu {
+        display: flex;
+    }
+    .desktopMenu {
+        display: none;
+    }
+    .desktopMenuBtn {
+        display: none;
+    }
+}

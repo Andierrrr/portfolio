@@ -1,0 +1,147 @@
+/* Keyframes for animations */
+@keyframes dashAnimation {
+    0% {
+        border-image-source: linear-gradient(to right, transparent 0%, teal 25%, teal 50%, transparent 75%);
+        border-image-slice: 1;
+        border-image-width: 2px;
+        border-image-repeat: round;
+        border-image-offset: 0;
+    }
+    25% {
+        border-image-source: linear-gradient(to top, transparent 0%, teal 25%, teal 50%, transparent 75%);
+    }
+    50% {
+        border-image-source: linear-gradient(to left, transparent 0%, teal 25%, teal 50%, transparent 75%);
+    }
+    75% {
+        border-image-source: linear-gradient(to bottom, transparent 0%, teal 25%, teal 50%, transparent 75%);
+    }
+    100% {
+        border-image-source: linear-gradient(to right, transparent 0%, teal 25%, teal 50%, transparent 75%);
+    }
+}
+
+@keyframes typingEffect {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Skills Section Styles */
+#skills {
+    overflow: hidden;
+    width: 100vw;
+    max-width: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(2, 24, 34); /* Dark teal background */
+    padding: 2rem 0;
+}
+
+.skillTitle {
+    font-size: 3rem;
+    font-weight: 600;
+    padding-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: rgb(233, 227, 227); /* Light teal color for title */
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    display: inline-block;
+    animation: typingEffect 2s steps(30, end) forwards, fadeEffect 2s ease-out 2s forwards;
+}
+
+.skillDesc {
+    font-weight: 400;
+    font-size: 1rem;
+    max-width: 51rem;
+    padding: 0 2rem;
+    color: rgb(233, 226, 226); /* Light teal color for description */
+    display: block;
+    animation: fadeEffect 5s ease-out 1s forwards;
+    opacity: 0;
+}
+
+/* Skill Bars */
+.skillBars {
+    margin: 1.5rem;
+    width: 100vw;
+    max-width: 80%;
+    text-align: left;
+    background-color :rgb(2, 24, 34);
+}
+
+.skillBar {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background-color: rgb(69, 174, 174); /* Darker teal background for skill bars */
+    position: relative;
+    border: 2px solid transparent;
+    border-image-source: linear-gradient(to right, transparent 0%, rgb(38, 198, 218) 25%, rgb(38, 198, 218) 50%, transparent 75%);
+    border-image-slice: 1;
+    border-image-width: 2px;
+    border-image-repeat: round;
+    animation: dashAnimation 2s linear infinite;
+}
+
+.skillBarImg {
+    object-fit: cover;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 2rem;
+    border-radius: 50%;
+    border: 2px solid rgb(38, 198, 218); /* Teal border for images */
+    background-color: aqua;
+}
+
+.skillBarText > h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(225, 245, 254); /* Light teal/white for text */
+}
+
+.skillBarText > p {
+    font-size: 0.9rem;
+    font-weight: 200;
+    color: rgb(180, 220, 230); /* Light teal for secondary text */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 720px) {
+    .skillBarText > p {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skillBarText > p {
+        font-size: 3vw;
+    }
+    .skillBarImg {
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+    .skillBarText > h2 {
+        font-size: 5vw;
+    }
+}
